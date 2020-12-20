@@ -3,35 +3,36 @@ package definition;
 import groovy.json.internal.LazyMap;
 
 /**
- * Created by robson on 30/08/2017.
+ * Created by Janes & Lucas
  */
 public class Processo {
 
-    private static final String URL_PROCESSO = "http://agapito-server.herokuapp.com/processos";
-    private static LazyMap camposJson = new LazyMap();
-    private static String ultimoProcesso;
+    private static final String URL_PROCESSOS = "http://agapito-server.herokuapp.com/processos/";
+    private static LazyMap fieldsJson = new LazyMap();
+    private static String lastProcesso;
 
     public static void addFields(String field, String value) {
-        camposJson.put(field, value);
+        fieldsJson.put(field, value);
     }
 
     public static void clearFields() {
-        camposJson.clear();
+        fieldsJson.clear();
     }
 
     public static LazyMap getFields() {
-        return camposJson;
+        return fieldsJson;
     }
 
     public static String getEndPoint() {
-        return URL_PROCESSO;
+        return URL_PROCESSOS;
     }
 
-    public static String getultimoProcesso() {
-        return ultimoProcesso;
+    public static String getLastProcesso() {
+        return lastProcesso;
     }
 
-    public static void setultimoProcesso(String ultimoProcesso) {
-        Processo.ultimoProcesso = ultimoProcesso;
+    public static void setLastProcesso(String lastUser) {
+        Processo.lastProcesso = lastUser;
     }
+
 }
